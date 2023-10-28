@@ -11,3 +11,8 @@
     - nvm install (version number)
 - Next.js
     - npm i next
+
+### Reference docs 
+
+- Tailwind CSS documentation: https://tailwindcss.com/
+    - Tailwind VSCode extension: Tailwind CSS Intellisense by Tailwind Labs
