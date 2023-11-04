@@ -16,3 +16,9 @@
 
 - Tailwind CSS documentation: https://tailwindcss.com/
     - Tailwind VSCode extension: Tailwind CSS Intellisense by Tailwind Labs
+
+
+### Things not working in the app:
+
+- Car images aren't working because you have to have a company email to get it working. Plus it's paid at a certain point. Opted
+not to do this and just use the placeholder
