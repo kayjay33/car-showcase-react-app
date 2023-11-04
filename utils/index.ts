@@ -36,7 +36,9 @@ export const deleteSearchParams = (type: string) => {
   newSearchParams.delete(type.toLocaleLowerCase());
 
   // Construct the updated URL pathname with the deleted search parameter
-  const newPathname = `${window.location.pathname}?${newSearchParams.toString()}`;
+  const newPathname = `${
+    window.location.pathname
+  }?${newSearchParams.toString()}`;
 
   return newPathname;
 };
@@ -46,8 +48,8 @@ export async function fetchCars(filters: FilterProps) {
 
   // Set the required headers for the API request
   const headers: HeadersInit = {
-    "X-RapidAPI-Key": '53c3e18136msh946527035ac801fp12b964jsn88e6fbb9f6bd',
-    "X-RapidAPI-Host": 'cars-by-api-ninjas.p.rapidapi.com',
+    "X-RapidAPI-Key": "53c3e18136msh946527035ac801fp12b964jsn88e6fbb9f6bd",
+    "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
   };
 
   // Set the required headers for the API request
@@ -65,16 +67,21 @@ export async function fetchCars(filters: FilterProps) {
 }
 
 export const generateCarImageUrl = (car: CarProps, angle?: string) => {
+  // qx* Have to sign up with your company email to use this API - has a ton of car images
+
   const url = new URL("https://cdn.imagin.studio/getimage");
   const { make, model, year } = car;
 
-  url.searchParams.append('customer', '53c3e18136msh946527035ac801fp12b964jsn88e6fbb9f6bd');
-  url.searchParams.append('make', make);
-  url.searchParams.append('modelFamily', model.split(" ")[0]);
-  url.searchParams.append('zoomType', 'fullscreen');
-  url.searchParams.append('modelYear', `${year}`);
+  url.searchParams.append(
+    "customer",
+    "53c3e18136msh946527035ac801fp12b964jsn88e6fbb9f6bd"
+  );
+  url.searchParams.append("make", make);
+  url.searchParams.append("modelFamily", model.split(" ")[0]);
+  url.searchParams.append("zoomType", "fullscreen");
+  url.searchParams.append("modelYear", `${year}`);
   // url.searchParams.append('zoomLevel', zoomLevel);
-  url.searchParams.append('angle', `${angle}`);
+  url.searchParams.append("angle", `${angle}`);
 
   return `${url}`;
-} 
+};
